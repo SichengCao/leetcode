@@ -1,0 +1,5 @@
+# REST API 示例依赖（面试向）
+# 安装: pip install -r requirements.txt
+
+fastapi==0.109.0
+uvicorn[standard]==0.27.0
