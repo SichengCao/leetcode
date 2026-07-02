@@ -42,10 +42,6 @@ def dijkstra(graph, start):
     return dist
 
 
-
-
-
-
 graph = {
     'a': {
         'b': 2,

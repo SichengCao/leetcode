@@ -11,7 +11,7 @@ def truncate_logs(messages, max_logs):
 
     for source, msg in messages:
         count[source] += 1
-
+    print(count)
     counts = list(count.values())
 
     print(counts)
@@ -32,9 +32,8 @@ def truncate_logs(messages, max_logs):
 
         return total <= max_logs
 
-    ans = 0
 
-    while left < right:
+    while left <= right:
 
         mid = (left + right) // 2
 
@@ -45,16 +44,13 @@ def truncate_logs(messages, max_logs):
 
         else:
 
-            right = mid
+            right = mid - 1
 
-    X = left
+    X = right
 
     print("Best cutoff X =", X)
 
-    # -----------------------------------------
-    # Step 3:
-    # Actually truncate
-    # -----------------------------------------
+
     used = defaultdict(int)
 
     result = []
@@ -70,9 +66,6 @@ def truncate_logs(messages, max_logs):
     return result
 
 
-# ------------------------------------------------
-# MAIN
-# ------------------------------------------------
 
 def main():
 
